@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIARI</title>
+    <link rel="stylesheet" href="Tarefa.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/jpg" href="svg/Icone.svg"/>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="svg/Group 48.svg" alt="">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="menu-item">Diário</a></li>
+                <li><a href="#" class="menu-item">Lista de Tarefas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="tarefas">
+            <h2>Lista de Tarefas</h2>
+            <input type="text" id="nova-tarefa" placeholder="Digite uma nova tarefa">
+            <button onclick="adicionarTarefa()">Adicionar</button>
+            <ul id="lista-tarefas"></ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Meu Diário e Lista de Tarefas</p>
+    </footer>
+
+    <script>
+    function adicionarTarefa() {
+    const tarefa = document.getElementById('nova-tarefa').value;
+    if (tarefa) {
+        const lista = document.getElementById('lista-tarefas');
+        const item = document.createElement('li');
+
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.id = `tarefa-${lista.children.length}`;
+
+        const label = document.createElement('label');
+        label.setAttribute('for', checkbox.id);
+        label.textContent = tarefa;
+
+        const botaoRemover = document.createElement('button');
+        botaoRemover.textContent = 'Remover';
+        botaoRemover.onclick = () => lista.removeChild(item);
+
+        item.appendChild(checkbox);
+        item.appendChild(label);
+        item.appendChild(botaoRemover);
+        lista.appendChild(item);
+
+        document.getElementById('nova-tarefa').value = '';
+    }
+    }
+
+        window.onscroll = function () {
+        const header = document.getElementById('header');
+        if (window.scrollY > 5) {
+            header.classList.add('header-scrolled');
+        } else {
+            header.classList.remove('header-scrolled');
+        }
+        };
+    </script>
+</body>
+</html>

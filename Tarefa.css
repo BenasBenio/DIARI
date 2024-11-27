@@ -1,0 +1,162 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-image: url(img/pexels-souvenirpixels-417074.jpg);
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: rgba(70, 70, 70, 0.7);
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    position: relative;
+}
+
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+}
+
+.header-scrolled nav .logo img {
+    width: 100px;
+}
+
+.header-scrolled {
+    background: rgba(0, 0, 0, 0.789);
+}
+
+.logo img {
+    width: 200px;
+    transition: all 0.3s ease;
+}
+
+.header-scrolled .logo img {
+    width: 100px;
+}
+
+.header-scrolled {
+    background: rgba(0, 0, 0, 0.789);
+}
+
+.menu-item::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background-color: #ffffff;
+    transition: 0.3s ease;
+}
+
+.menu-item:hover::after{
+    width: 100%;
+}
+
+main {
+    padding: 2rem;
+    display: flex;
+    flex-direction: row;
+    gap: 10rem;    
+    justify-content: center;
+}
+
+section {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 800px;
+}
+
+section h2 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+textarea, input {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button {
+    background-color: rgb(70, 70, 70);
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+button:hover {
+    background-color: #d0ff00;
+}
+
+/* Estilo básico para a lista de tarefas */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    gap: 0.5rem;
+}
+
+/* Estilo da checkbox */
+input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #0078d7; /* Altera a cor da checkbox nos navegadores compatíveis */
+    cursor: pointer;
+}
+
+/* Texto riscado quando marcado */
+input[type="checkbox"]:checked + label {
+    text-decoration: line-through;
+    color: #666;
+}
+
+ul li button {
+    background-color: #ff4d4d;
+    padding: 0.3rem 0.7rem;
+}
+
+ul li button:hover {
+    background-color: #d93636;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    color: #fff;
+}

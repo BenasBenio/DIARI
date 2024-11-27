@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIARI</title>
+    <link rel="stylesheet" href="Diario.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/jpg" href="svg/Icone.svg"/>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="svg/Group 48.svg" alt="">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#" class="menu-item">Diário</a></li>
+                <li><a href="Tarefa.html" class="menu-item">Lista de Tarefas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="diario">
+            <h1>Diário</h1>
+            <textarea id="diario-text" placeholder="Escreva aqui o que aconteceu hoje..."></textarea>
+            <button onclick="salvarDiario()">Salvar</button>
+            <button onclick="removerUltimaLinha()">Remover Última Linha</button>
+            <div id="diario-log"></div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Meu Diário e Lista de Tarefas</p>
+    </footer>
+
+    <script>
+        function salvarDiario() {
+            const texto = document.getElementById('diario-text').value;
+            const log = document.getElementById('diario-log');
+            const novoRegistro = document.createElement('p');
+            novoRegistro.textContent = texto;
+            log.appendChild(novoRegistro);
+            document.getElementById('diario-text').value = '';
+        };
+
+            function removerUltimaLinha() {
+        const log = document.getElementById('diario-log');
+        if (log.lastChild) {
+            log.removeChild(log.lastChild); // Remove o último elemento do log
+        } else {
+            alert('Nenhuma linha para remover!');
+        }
+    };
+
+        window.onscroll = function () {
+        const header = document.getElementById('header');
+        if (window.scrollY > 5) {
+            header.classList.add('header-scrolled');
+        } else {
+            header.classList.remove('header-scrolled');
+        }
+        };
+
+    </script>
+</body>
+</html>
